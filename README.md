@@ -29,15 +29,7 @@ Wireframes / Screenshots
 [Wireframes 1 & 2](images/IMG_7421.jpeg)
 [Wireframes 3 & 4](images/IMG_7422.jpeg)
 
-Entity Relationship Diagrams/ examples I would use:
 
-let card = function (cardFlip) {
-  let cardArr = [c1, c2, c3, ect];
-  card.forEach(carFlip(cardArr)
-    cardArr.push(cardFlip);
-  }
-CB Function
-let cardFlip = document. querySelector("card").addEventListener("click", cardFlip);
 
 
   
