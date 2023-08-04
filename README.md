@@ -1,6 +1,6 @@
 # Concentration-A-simple-game
 Overview
-A card game that relies on users memory. Users will flip cards over one at a time to find mathcing card pairs. This was one of my favoirte card games to play as a kid.
+A card game that relies on users memory. Users will flip cards over one at a time to find mathcing card pairs. This was one of my favoirte card games to play as a kid. As an older adult it's still fun to play to work on memory skills.
 Technologies used:
 Javascript
 CSS
@@ -18,12 +18,10 @@ See a message "worng card" for wrong selection
 Automatically lose after a certain number of inccorect guesses
 
 Bouns items if time allows:
+Set Timeout on how long card image is viewed
 Have multiple sets of card images to choose from
 Have a tally on the game board of games won
-
-
-
-
+Have levels to move up to which increase the number of cards in each level
 
 
 Wireframes / Screenshots
@@ -32,5 +30,16 @@ Wireframes / Screenshots
 ](IMG_7422.jpeg)
 
 Entity Relationship Diagrams
-diagrams that describe the relationships between your resources
+
+let card = function (cardFlip) {
+  let cardArr = [c1, c2, c3, ect];
+  card.forEach(carFlip(cardArr)
+    cardArr.push(cardFlip);
+  }
+CB Function
+let cardFlip = document. querySelector("card").addEventListener("click", cardFlip);
+
+
+  
+ 
 
