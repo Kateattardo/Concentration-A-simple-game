@@ -26,8 +26,8 @@ Have levels to move up to which increase the number of cards in each level
 
 Wireframes / Screenshots
  
-[Wireframes 1 & 2](images/IMG_7421.jpeg)
-[Wireframes 3 & 4](images/IMG_7422.jpeg)
+![Wireframes 1 & 2](images/IMG_7421.jpeg)
+![Wireframes 3 & 4](images/IMG_7422.jpeg)
 
 
 
