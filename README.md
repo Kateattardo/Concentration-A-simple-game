@@ -25,11 +25,11 @@ Have levels to move up to which increase the number of cards in each level
 
 
 Wireframes / Screenshots
-](IMG_7421.jpeg)
+ 
+[Wireframes 1 & 2](images/IMG_7421.jpeg)
+[Wireframes 3 & 4](images/IMG_7422.jpeg)
 
-](IMG_7422.jpeg)
-
-Entity Relationship Diagrams
+Entity Relationship Diagrams/ examples I would use:
 
 let card = function (cardFlip) {
   let cardArr = [c1, c2, c3, ect];
