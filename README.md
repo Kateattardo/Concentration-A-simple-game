@@ -1,2 +1,16 @@
 # Concentration-A-simple-game
-A simple memory game to practice HTML,CSS, and Javascript
+Overview
+a brief description of your application
+
+
+User Stories
+a detailed list of the functionality of your application, told through a user's perspective
+
+
+Wireframes / Screenshots
+diagrams that display what your application will look like, and images from the completed app.
+
+
+Entity Relationship Diagrams
+diagrams that describe the relationships between your resources
+
