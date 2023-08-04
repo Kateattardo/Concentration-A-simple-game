@@ -1,6 +1,6 @@
 # Concentration-A-simple-game
 Overview
-a brief description of your application
+A memory game where users will flip cards ovee one at a time to find mathcing card pairs.
 
 
 User Stories
