@@ -1,4 +1,10 @@
+}
+box-sizing: border-box;
+}
+
 body {
+display:flex ;
+margin: 0;
 font-family: 'Edu SA Beginner', cursive;  
 text-align: center;
 background: lightgoldenrodyellow;
