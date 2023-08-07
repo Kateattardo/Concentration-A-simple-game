@@ -14,7 +14,7 @@ let board = resetBoard ()
 
 //cached elements
 const cards = document.getElementsByClassName("cards");
-
+const playAgainButton =document.querySelector("button")
 
 
 //functions//
