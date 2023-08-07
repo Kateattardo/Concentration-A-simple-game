@@ -4,7 +4,8 @@ const card =[ "card a1", "card a2", "card b1", "card b2", "card c1", "card c2", 
 //What are the variables://
 let flip = filpCard()
 let match = matchCard()
-let timer= timerCountDown ()
+let timer = timerCountDown ()
+let board = resetBoard ()
 
 
 // game variables: what changes in the game? score restults, wahat games as game continues?//
@@ -12,10 +13,26 @@ let timer= timerCountDown ()
 
 
 //cached elements
+const cards = document.getElementsByClassName("cards");
 
 
 
 //functions//
+function filpCard(){
+
+}
+
+function matchCard(removeMatchedCards){
+
+}
+
+function timer(timerCountDown){
+
+}
+
+function resetBoard(){
+
+}
 //flip cards
 //remove matches from the board
 //clock timer
