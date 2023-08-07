@@ -4,8 +4,9 @@ const card =[ "card a1", "card a2", "card b1", "card b2", "card c1", "card c2", 
 //What are the variables://
 let flip = filpCard()
 let match = matchCard()
+let matchCard = removeMatchedCards()
 let timer = timerCountDown ()
-let board = resetBoard ()
+let board = playAgain ()
 
 
 // game variables: what changes in the game? score restults, wahat games as game continues?//
@@ -13,8 +14,9 @@ let board = resetBoard ()
 
 
 //cached elements
-const cards = document.getElementsByClassName("cards");
-const playAgainButton =document.querySelector("button")
+const cards = document.getElementsByClassName(".cards");
+const playAgainButton = document.querySelector("button")
+const timerCountDown = document.querySelector("button")
 
 
 //functions//
@@ -30,7 +32,7 @@ function timer(timerCountDown){
 
 }
 
-function resetBoard(){
+function playAgainButton(){
 
 }
 //flip cards
@@ -39,15 +41,15 @@ function resetBoard(){
 //reset button
 
 //render//
+function renderPlayAgainButton(){
 
-for each loop
-
-
-
+}
+function renderMessage("wrong card") {
+    
+}
 
 
 //event listeners/
 
-document.addEventListener("click", function()) {
+.cards forEach (document.addEventListener("click", flipCard));
 
-}
