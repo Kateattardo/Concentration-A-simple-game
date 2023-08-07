@@ -18,7 +18,7 @@ const cards = document.getElementsByClassName("cards");
 
 
 //functions//
-function filpCard(){
+function filpCard(card)on("click", function(){
 
 }
 
@@ -47,3 +47,7 @@ for each loop
 
 
 //event listeners/
+
+document.addEventListener("click", function()) {
+
+}
