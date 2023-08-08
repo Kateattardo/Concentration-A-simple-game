@@ -3,22 +3,23 @@ box-sizing: border-box;
 }
 
 body {
-display:flex ;
+display: flex ;
 margin: 0;
 font-family: 'Edu SA Beginner', cursive;  
 text-align: center;
 background: lightgoldenrodyellow;
 }
 .board {
-    display: flex;
+    flex-direction: row;
     grid-template-rows: repeat(3, 100px);
     gap: 2px;
     margin: 20px auto;
     width: 306px;
   }
-  .card {
-    display: flexbox-grid;
+  .cards {
+    display: grid;
     grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(3, 100px);
     align-items: center;
     justify-content: center;
     background-color:lightgoldenrodyellow;
@@ -26,8 +27,17 @@ background: lightgoldenrodyellow;
     cursor: pointer;
   }
   header {
-    margin-top: 30px;
+    text-align: center;
+    margin-top: 10vmin;
     color:forestgreen;
-    font: size 10vmin;;
+    font-size: 4vmin;
     letter-spacing: 2vmin;
   }
+  
+button {
+  color:forestgreen;
+  border: 1vmin;
+  border-radius: 2vmin;
+  font-size: 2vmin;
+  margin-top: 4vmin;
+}
