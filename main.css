@@ -1,43 +1,29 @@
-}
-box-sizing: border-box;
-}
-
 body {
-display: flex ;
 margin: 0;
 font-family: 'Edu SA Beginner', cursive;  
 text-align: center;
 background: lightgoldenrodyellow;
 }
-.board {
-    position: absolute ;
-    flex-direction: row;
+
+  .cards {
+    display: flex;
+    width: 10px;
+    height: 10px;
+    margin: auto;
+    grid-template-columns: repeat(4, 10px);
     grid-template-rows: repeat(3, 10px);
     gap: 2px;
-    margin: 20px auto;
-    width: 36px;
-  }
-  .cards {
-    display: grid;
-    grid-template-columns: repeat(4, 10px);
-    grid-template-rows: repeat(3, 10px);
     align-items: center;
     justify-content: center;
-    background-color:lightgoldenrodyellow;
     font-size: 48px;
     cursor: pointer;
+    background: lightgoldenrodyellow;
   }
-  img {
-    display: grid;
-    grid-template-columns: repeat(4, 10px);
-    grid-template-rows: repeat(3, 10px);
-    width: 100px;
-    height: 200px;
-    object-fit: contain;
   }
   header {
+    background: lightgoldenrodyellow;
     text-align: center;
-    margin-top: 10vmin;
+    margin-top: 0;
     color:forestgreen;
     font-size: 4vmin;
     letter-spacing: 2vmin;
