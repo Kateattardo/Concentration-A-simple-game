@@ -12,20 +12,28 @@ background: lightgoldenrodyellow;
 .board {
     position: absolute ;
     flex-direction: row;
-    grid-template-rows: repeat(3, 100px);
+    grid-template-rows: repeat(3, 10px);
     gap: 2px;
     margin: 20px auto;
-    width: 306px;
+    width: 36px;
   }
   .cards {
     display: grid;
-    grid-template-columns: repeat(4, 100px);
-    grid-template-rows: repeat(3, 100px);
+    grid-template-columns: repeat(4, 10px);
+    grid-template-rows: repeat(3, 10px);
     align-items: center;
     justify-content: center;
     background-color:lightgoldenrodyellow;
     font-size: 48px;
     cursor: pointer;
+  }
+  img {
+    display: grid;
+    grid-template-columns: repeat(4, 10px);
+    grid-template-rows: repeat(3, 10px);
+    width: 100px;
+    height: 200px;
+    object-fit: contain;
   }
   header {
     text-align: center;
