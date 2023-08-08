@@ -10,6 +10,7 @@ text-align: center;
 background: lightgoldenrodyellow;
 }
 .board {
+    position: absolute ;
     flex-direction: row;
     grid-template-rows: repeat(3, 100px);
     gap: 2px;
@@ -33,11 +34,12 @@ background: lightgoldenrodyellow;
     font-size: 4vmin;
     letter-spacing: 2vmin;
   }
-  
+
 button {
   color:forestgreen;
   border: 1vmin;
   border-radius: 2vmin;
   font-size: 2vmin;
   margin-top: 4vmin;
+  align-content: center;
 }
