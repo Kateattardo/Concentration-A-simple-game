@@ -6,7 +6,7 @@ let flip = filpCard()
 let match = matchCard()
 let matchCard = removeMatchedCards()
 let timer = timerCountDown ()
-let board = playAgain ()
+let button = playAgain ()
 
 
 // game variables: what changes in the game? score restults, wahat games as game continues?//
@@ -20,9 +20,10 @@ const timerCountDown = document.querySelector("button")
 
 
 //functions//
-function filpCard(card)on("click", function(){
-
+function filpCard(card){
+    getElementsByClassName("cards")
 }
+cards.forEach(cards =>card.addEventListener("click", flipCard)
 
 function matchCard(removeMatchedCards){
 

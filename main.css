@@ -5,19 +5,19 @@ text-align: center;
 background: lightgoldenrodyellow;
 }
 
-  .cards {
-    display: flex;
-    width: 10px;
-    height: 10px;
-    margin: auto;
-    grid-template-columns:(4, 10px);
-    grid-template-rows: (3, 10px);
-    gap: 2px;
-    align-items: center;
-    justify-content: space-around;
-    font-size: 48px;
-    cursor: pointer;
-    background: lightgoldenrodyellow;
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 10px);
+      grid-template-rows: repeat(3, 10px);
+      gap: 2px;
+      width: 10px;
+      height: 10px;
+      margin: auto;
+      align-items: center;
+      justify-content: space-evenly;
+      font-size: 48px;
+      cursor: pointer;
+      background: lightgoldenrodyellow;
   }
   img {
     display: grid;
