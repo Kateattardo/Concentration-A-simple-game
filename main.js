@@ -1,6 +1,7 @@
 //what are the constants//
-const cards =[ "card a1", "card a2", "card b1", "card b2", "card c1", "card c2", "card d1", "card d2", "card e1", "card e2", "card f1" , "card f2"]
-const card = document.querySelectorAll(".dogcard");
+document.addEventListener("DOMContentLoaded", function() {
+const card =[ "card a1", "card a2", "card b1", "card b2", "card c1", "card c2", "card d1", "card d2", "card e1", "card e2", "card f1" , "card f2"]
+const cards = document.querySelectorAll(".dogcard");
 const timer = document.getElementById("timer");
 const resetButton = document.querySelector("button");
 const wrongMessage = document.getElementById("wrong-message");
@@ -10,16 +11,22 @@ const wrongMessage = document.getElementById("wrong-message");
 let flippedCards = [];
 let matchedPairs = 0;
 let secondsRemaining = 0;
-let button = playAgain ()
+
 
 
 
 //functions//
+
+//const shuffleCards = Array.from(cards);
+//shuffleArray(shuffleCards);
+
+
 function shuffleCards(dogCards) {
     for (let i =dogCards.length -1; i > 0; i--) {
         const j = Math.floor(Math.random() * i +1);
+        [array[i], [array[j] = [array[j], array [i]];
     }
-    return dogCards;
+    //return dogCards;
 };
 
 function filpCard(dogCard){
