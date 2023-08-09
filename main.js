@@ -14,16 +14,17 @@ let button = playAgain ()
 
 
 //cached elements
-const cards = document.getElementsByClassName(".cards");
+const card = document.getElementsByClassName("cards");
 const playAgainButton = document.querySelector("button")
 const timerCountDown = document.querySelector(".timer")
 
 
 //functions//
+const card= document.querySelectorAll(".dogCards");
 function filpCard(dogCard){
     getElementsByClassName("dogCard")
 }
-cards.forEach(cards =>card.addEventListener("click", flipCard)
+cards.forEach(cards =>cards.addEventListener("click", flipCard));
 
 function matchCard(removeMatchedCards){
 
