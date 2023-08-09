@@ -13,7 +13,7 @@ let button = playAgain ()
 
 
 
-//cached elements
+//cached elements//
 const card = document.getElementsByClassName("cards");
 const playAgainButton = document.querySelector("button")
 const timerCountDown = document.querySelector(".timer")
@@ -26,7 +26,25 @@ function filpCard(dogCard){
 }
 cards.forEach(cards =>cards.addEventListener("click", flipCard));
 
-function matchCard(removeMatchedCards){
+function timerCountDownCountdown() {
+    let seconds = 30;
+  
+    function timerCountDownCountdown() {
+      if (seconds > 0) {
+        console.log(seconds + " seconds remaining");
+        seconds--;
+        setTimeout(updateCountdown, 1000); // Update countdown every second (1000ms)
+      } else {
+        console.log("Time's up!");
+      }
+    }
+  
+    updateCountdown(); // Start the countdown
+  }
+  
+  startCountdown();
+
+//function matchCard(removeMatchedCards){
 
 }
 
@@ -53,5 +71,5 @@ function renderMessage("wrong card") {
 
 //event listeners/
 
-.cards forEach (document.addEventListener("click", flipCard));
+.cards forEach (document.addEventListener("click", flipCard));//
 
