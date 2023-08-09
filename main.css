@@ -20,7 +20,12 @@ background: lightgoldenrodyellow;
   .dogcard {
     padding: 2px 2px;
     }
+  .timer {
+    font-size: 1em;
+    color:forestgreen;
+    padding: 5%;
   }
+
   img {
     display: grid;
     height: 150px;
