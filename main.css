@@ -50,3 +50,9 @@ button {
   margin-top: 4vmin;
   align-content: center;
 }
+.message {
+  display: none;
+  color: forestgreen;
+  font-size: 18px;
+  margin-top: 10px;
+}
