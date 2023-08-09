@@ -6,19 +6,30 @@ const button = document.querySelector("button");
 
 
 //What are the variables://
-let flip = filpCard()
-let match = matchCard()
-let matchCard = removeMatchedCards()
-let timer = timerCountDown ()
+let flippedCards = [];
+let matchedPairs = 0;
+let secondsRemaining = 0;
 let button = playAgain ()
 
 
 
 //functions//
-//const cards= document.querySelectorAll(".dogCards");//
+function shuffleCards(dogCards) {
+    for (let i =0; i< 12; i++) {
+        Math.floor(Math.random() * i +1);
+    }
+}
 function filpCard(dogCard){
     cards.classList.add("flipped");
-    flippedCards.push(card);
+    flippedCards.push(dogCard);
+    if (flippedCards.length === 2) {
+        if(checkMatching()) {
+            handleMatch();
+        } else {
+            setTimeout(resetFlippedCards, 1000);
+        }
+
+    }
 }
 cards.forEach(cards =>cards.addEventListener("click", "flipCard"));
 
