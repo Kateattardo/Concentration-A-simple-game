@@ -3,6 +3,7 @@ const cards =[ "card a1", "card a2", "card b1", "card b2", "card c1", "card c2",
 const dogCards = document.querySelectorAll(".dogcard");
 const timer = document.getElementById("timer");
 const button = document.querySelector("button");
+cont wrongMessage = document.getElementById("wrong-message");
 
 
 //What are the variables://
@@ -32,10 +33,6 @@ function filpCard(dogCard){
 
     }
 }
-cards.forEach(cards =>cards.addEventListener("click", "flipCard"));
-
-
-
 function timerCountDownCountdown() {
     let seconds = 30;
   
@@ -60,10 +57,14 @@ function handleMatch() {
         endGame();
     }
 }   else {
+      
+    wrongMessage.style.display = "block";
+
     setTimeout(() => {
         card1.classList.remove("flipped");
         card2.classList.remove("flipped");
         flippedCards = [];
+        wrongMessage.style.display = "none";
     }, 1000);
 }
 
@@ -74,3 +75,8 @@ function checkMatching() {
 // Reset flipped cards if they don't match//
 function resetFlippedCards() {
 }
+
+
+//addEventListener//
+
+cards.forEach(cards =>cards.addEventListener("click", "flipCard"));
