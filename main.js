@@ -1,9 +1,9 @@
 //what are the constants//
 const cards =[ "card a1", "card a2", "card b1", "card b2", "card c1", "card c2", "card d1", "card d2", "card e1", "card e2", "card f1" , "card f2"]
-const dogCards = document.querySelectorAll(".dogcard");
+const card = document.querySelectorAll(".dogcard");
 const timer = document.getElementById("timer");
-const button = document.querySelector("button");
-cont wrongMessage = document.getElementById("wrong-message");
+const resetButton = document.querySelector("button");
+const wrongMessage = document.getElementById("wrong-message");
 
 
 //What are the variables://
@@ -21,6 +21,7 @@ function shuffleCards(dogCards) {
     }
     return dogCards;
 };
+
 function filpCard(dogCard){
     cards.classList.add("flipped");
     flippedCards.push(dogCard);
@@ -68,15 +69,30 @@ function handleMatch() {
     }, 1000);
 }
 
-
-// Check if the flipped cards match//
-function checkMatching() {
+//function checkMatching() {
+    const [card1, card2] = flippedCards;
+    const card1Value = card1.dataset.card;
+    const card2Value = card2.dataset.card;
+    return card1Value === card2Value;// intergrate into flip card function
 }
 // Reset flipped cards if they don't match//
-function resetFlippedCards() {
+//function resetFlippedCards() {
+    flippedCards.forEach(card => card.classList.remove("flipped"));
+    flippedCards = [];
+
+    resetFlippedCards();// intergrate into flip card fucntion
 }
 
 
 //addEventListener//
+document.addEventListener("DOMContentLoaded", function() {
 
-cards.forEach(cards =>cards.addEventListener("click", "flipCard"));
+    cards.forEach(function (card) {
+        card.addEventListener("click", function() {
+            if (!card.classList.contains("flipped") && flippedCards.length <2) {
+                filpCard(card);
+            }
+        }
+resetButton.addEventListener("click", function () {
+    resetGame();
+}
