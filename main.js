@@ -16,12 +16,12 @@ let button = playAgain ()
 //cached elements
 const cards = document.getElementsByClassName(".cards");
 const playAgainButton = document.querySelector("button")
-const timerCountDown = document.querySelector("button")
+const timerCountDown = document.querySelector(".timer")
 
 
 //functions//
-function filpCard(card){
-    getElementsByClassName("cards")
+function filpCard(dogCard){
+    getElementsByClassName("dogCard")
 }
 cards.forEach(cards =>card.addEventListener("click", flipCard)
 
