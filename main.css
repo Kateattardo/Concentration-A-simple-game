@@ -19,9 +19,10 @@ background: lightgoldenrodyellow;
   }
   .dogcard {
     padding: 2px 2px;
+    transform: rotateY(180deg);
     }
   .timer {
-    font-size: 1em;
+    font-size: 2em;
     color:forestgreen;
     padding: 5%;
   }
