@@ -1,6 +1,6 @@
 //what are the constants//
 const cards =[ "card a1", "card a2", "card b1", "card b2", "card c1", "card c2", "card d1", "card d2", "card e1", "card e2", "card f1" , "card f2"]
-const cards = document.querySelectorAll(".dogcard");
+const dogCards = document.querySelectorAll(".dogcard");
 const timer = document.getElementById("timer");
 const button = document.querySelector("button");
 
@@ -17,7 +17,8 @@ let button = playAgain ()
 //functions//
 //const cards= document.querySelectorAll(".dogCards");//
 function filpCard(dogCard){
-    getElementsByClassName(".dogCards")
+    cards.classList.add("flipped");
+    flippedCards.push(card);
 }
 cards.forEach(cards =>cards.addEventListener("click", "flipCard"));
 
