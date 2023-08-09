@@ -1,5 +1,5 @@
 //what are the constants//
-const card =[ "card a1", "card a2", "card b1", "card b2", "card c1", "card c2", "card d1", "card d2", "card e1", "card e2", "card f1" , "card f2"]
+const cards =[ "card a1", "card a2", "card b1", "card b2", "card c1", "card c2", "card d1", "card d2", "card e1", "card e2", "card f1" , "card f2"]
 
 //What are the variables://
 let flip = filpCard()
@@ -14,13 +14,13 @@ let button = playAgain ()
 
 
 //cached elements//
-const card = document.getElementsByClassName("cards");
+let cards = document.getElementsByClassName("cards");
 const playAgainButton = document.querySelector("button")
 const timerCountDown = document.querySelector(".timer")
 
 
 //functions//
-const card= document.querySelectorAll(".dogCards");
+const cards= document.querySelectorAll(".dogCards");
 function filpCard(dogCard){
     getElementsByClassName("dogCard")
 }
@@ -29,20 +29,15 @@ cards.forEach(cards =>cards.addEventListener("click", flipCard));
 function timerCountDownCountdown() {
     let seconds = 30;
   
-    function timerCountDownCountdown() {
-      if (seconds > 0) {
+    function timerCountDown() {
+      if (secondseconds > 0) {
         console.log(seconds + " seconds remaining");
         seconds--;
-        setTimeout(updateCountdown, 1000); // Update countdown every second (1000ms)
+        setTimeout(updateCountdown, 1000);
       } else {
         console.log("Time's up!");
       }
-    }
-  
-    updateCountdown(); // Start the countdown
-  }
-  
-  startCountdown();
+
 
 //function matchCard(removeMatchedCards){
 
