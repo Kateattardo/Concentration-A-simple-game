@@ -15,10 +15,11 @@ let button = playAgain ()
 
 //functions//
 function shuffleCards(dogCards) {
-    for (let i =0; i< 12; i++) {
-        Math.floor(Math.random() * i +1);
+    for (let i =dogCards.length -1; i > 0; i--) {
+        const j = Math.floor(Math.random() * i +1);
     }
-}
+    return dogCards;
+};
 function filpCard(dogCard){
     cards.classList.add("flipped");
     flippedCards.push(dogCard);
@@ -48,7 +49,25 @@ function timerCountDownCountdown() {
       }
 // Handle a matched pair of cards
 function handleMatch() {
+    const [ card1, card2] = flippedCards;
+    if (card1.dataset.card === card2.dataset.card) {
+        card1.classList.add("matched");
+        card2.classList.add("matched");
+
+        flippedCards[];
+        matchedPairs++;
+    if (matchedPairs === cards.length / 2) {
+        endGame();
+    }
+}   else {
+    setTimeout(() => {
+        card1.classList.remove("flipped");
+        card2.classList.remove("flipped");
+        flippedCards = [];
+    }, 1000);
 }
+
+
 // Check if the flipped cards match//
 function checkMatching() {
 }
