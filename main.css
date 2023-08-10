@@ -29,7 +29,7 @@ background: lightgoldenrodyellow;
 
   .front{
     background-color: white;
-    transform: rotateY(0deg);
+    transform: rotate(0deg);
   }
 
   .back{
@@ -67,6 +67,7 @@ button {
   margin-top: 4vmin;
   align-content: center;
 }
+
 .message {
   display: none;
   color: forestgreen;
