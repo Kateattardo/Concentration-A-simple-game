@@ -19,8 +19,25 @@ background: lightgoldenrodyellow;
   }
   .dogcard {
     padding: 2px 2px;
-    transform: rotateY(180deg);
+    position: relative;
     }
+
+  .front, .back {
+    backface-visibility: visible;
+    transform-style: preserve-3d;
+  }
+
+  .front{
+    background-color: white;
+    transform: rotateY(0deg);
+  }
+
+  .back{
+    background-color: #f0f0f0;
+    transform: rotateY(180deg);
+    transform-origin: center center;
+  }
+
   .timer {
     font-size: 2em;
     color:forestgreen;
