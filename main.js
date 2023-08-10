@@ -10,6 +10,9 @@ document.addEventListener("DOMContentLoaded", function () {
     let matchedPairs = 0;
     let secondsRemaining = 120; // Initial time
     let timerInterval;
+    let lockedBoard = false;
+    let unlockBoard = true;
+
 
     // Shuffle cards "Fisher-Yates"
     function shuffleArray(array) {
@@ -82,8 +85,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Add click event listener to reset button
-    button.addEventListener("click", function (button) {
-        resetGame(button);
+    button.addEventListener("click", function (playAgainButton) {
+        resetGame(playAgainButton);
+        unlockBoard(playAgainButton);
     });
 
     // Timer function
@@ -102,15 +106,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Flip a card
     function flipCard(card) {
+        if (boardLocked || card.classList.contains("flipped")) {
+            return;
+        }
         card.classList.add("flipped");
         flippedCards.push(card);
 
         if (flippedCards.length === 2) {
+            lockBoard();
             if (checkMatching()) {
                 handleMatch();
             } else {
                 setTimeout(() => {
                     resetFlippedCards();
+                    unlockBoard();
                 }, 1000);
             }
         }

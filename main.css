@@ -28,8 +28,7 @@ background: lightgoldenrodyellow;
   }
 
   .front{
-    background-color: white;
-    transform: rotate(0deg);
+    transform: rotateY(0deg);
   }
 
   .back{
