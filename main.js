@@ -11,11 +11,11 @@
     let secondsRemaining = 120; // Initial time
     let timerInterval;
     let lockedBoard = false;
-    let unlockBoard = true;
+    
 
 //flip cards
     function flipCard(card) {
-        if (boardLocked || card.classList.contains("flipped")) {
+        if (lockBoard || card.classList.contains("flipped")) {
             return;
         }
         card.classList.add("flipped");
@@ -27,7 +27,6 @@
         } else {
                 setTimeout(() => {
                 resetFlippedCards();
-                unlockBoard();
                 }, 1000);
             }
         }
@@ -40,7 +39,8 @@
         const card2Value = card2.dataset.card;
         return card1Value === card2Value;
     }
-    console.log(checkMatching)
+    console.log(checkMatching());
+    
     // Matched cards
     function handleMatch() {
         const [card1, card2] = flippedCards;
@@ -52,7 +52,7 @@
             endGame();
         }
     }
-    console.log(handleMatch)
+    console.log("Matched!")
 
      // Timer function
      function startTimer() {
@@ -69,15 +69,12 @@
             }
         }, 1000);
     }
-    console.log(startTimer)
+    console.log(startTimer());
 
     function lockBoard() {
-        boardLocked = true;
+        lockBoard = false;
     }
     
-    function unlockBoard() {
-        boardLocked = false;
-    }
     // Reset 
     function resetGame() {
     resetFlippedCards();
@@ -93,14 +90,14 @@
     });
     startTimer();
 }
-console.log(resetGame)
+console.log(resetGame());
 
     // Reset flipped cards if no match
     function resetFlippedCards() {
         flippedCards.forEach(card => card.classList.remove("flipped"));
         flippedCards = [];
     }
-    console.log(resetFlippedCards)
+    console.log(resetFlippedCards());
 
     //Start game
     function startGame() {
@@ -115,16 +112,12 @@ console.log(resetGame)
     // End
     function endGame() {
         clearInterval(timerInterval);
+        console.log("Game over!");
     }
 
-
-    
-    
-
-
-    // Shuffle cards "Fisher-Yates"
-    function shuffleArray(array) {
-        for (let i = array.length - 1; i > 0; i--) {
+// Shuffle cards "Fisher-Yates"
+    function shuffleArray(cards) {
+        for (let i = cards.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
             [cards[i], cards[j]] = [cards[j], cards[i]];
         }
@@ -152,7 +145,7 @@ console.log(resetGame)
     // Add click event listener to reset button
     button.addEventListener("click", function (playAgainButton) {
         resetGame(playAgainButton);
-        unlockBoard(playAgainButton);
+        lockBoard(playAgainButton);
     });
 
    
