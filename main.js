@@ -1,167 +1,136 @@
-//what are the constants//
-document.addEventListener("DOMContentLoaded", function() {
-const card =[ "card a1", "card a2", "card b1", "card b2", "card c1", "card c2", "card d1", "card d2", "card e1", "card e2", "card f1" , "card f2"]
-const cards = document.querySelectorAll(".dogcard");
-const timer = document.getElementById("timer");
-const resetButton = document.querySelector("button");
-const wrongMessage = document.getElementById("wrong-message");
+//Constants
 
+document.addEventListener("DOMContentLoaded", function () {
+    const cards = document.querySelectorAll(".dogcard");
+    const timer = document.getElementById("timer");
+    const button = document.querySelector("button");
+    const wrongMessage = document.getElementById("wrong-message");
 
-//What are the variables://
-let flippedCards = [];
-let matchedPairs = 0;
-let secondsRemaining = 0;
+    let flippedCards = [];
+    let matchedPairs = 0;
+    let secondsRemaining = 120; // Initial time
+    let timerInterval;
 
-
-
-
-//functions//
-
-//const shuffleCards = Array.from(cards);
-//shuffleArray(shuffleCards) Fidher-Yates;
-
-
-function shuffleCards(dogCards) {
-    for (let i =dogCards.length -1; i > 0; i--) {
-        const j = Math.floor(Math.random() * i +1)
-        [card[i], card[j]] = [card[j], card[i]]
+    // Shuffle cards "Fisher-Yates"
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [cards[i], cards[j]] = [cards[j], cards[i]];
+        }
     }
-    console.log (dogCards)
-    //return dogCards;
-};
 
-function resetFlippedCards() {
-    flippedCards.forEach(card => card.classList.remove("flipped"));
-    flippedCards = [];
+    // Reset flipped cards if no match
+    function resetFlippedCards() {
+        flippedCards.forEach(card => card.classList.remove("flipped"));
+        flippedCards = [];
+    }
 
+    // Check if the flipped cards match
     function checkMatching() {
         const [card1, card2] = flippedCards;
         const card1Value = card1.dataset.card;
         const card2Value = card2.dataset.card;
-        return card1Value === card2Value;// intergrate into flip card function
-        
-        
+        return card1Value === card2Value;
+    }
+
+    // Matched cards
     function handleMatch() {
-            const [card1, card2] = flippedCards;
-            if (card1.dataset.card === card2.dataset.card) {
-                card1.classList.add("matched");
-                card2.classList.add("matched");
-        
-               flippedCards[];
-                matchedPairs++;
-            if (matchedPairs === cards.length / 2) {
-                endGame();
-            }
+        const [card1, card2] = flippedCards;
+        card1.classList.add("matched");
+        card2.classList.add("matched");
+        flippedCards = [];
+        matchedPairs++;
+        if (matchedPairs === cards.length / 2) {
+            endGame();
+        }
+    }
 
+    // End
     function endGame() {
+        clearInterval(timerInterval);
+        // Display victory message or perform any other game-over actions
+    }
 
+    // Reset 
     function resetGame() {
         resetFlippedCards();
         matchedPairs = 0;
-        secondsRemaining = 30; // Reset timer if needed
+        secondsRemaining = 120;
         wrongMessage.style.display = "none";
+        clearInterval(timerInterval);
+        timer.textContent = secondsRemaining;
+        const shuffledCards = Array.from(cards);
+        shuffleArray(shuffledCards);
+        cards.forEach(card => {
+            card.classList.remove("matched");
+        });
+        startTimer();
+    }
 
+    // Add click event listeners to cards
     cards.forEach(function (card) {
-    card.addEventListener("click", function() {
-        if (!card.classList.contains("flipped") && flippedCards.length <2) {
-                    filpCard(card);
-                }
+        card.addEventListener("click", function () {
+            if (!card.classList.contains("flipped") && flippedCards.length < 2) {
+                flipCard(card);
+            }
+        });
+    });
 
-
-
-    resetButton.addEventListener("click", function () {
+    // Add click event listener to reset button
+    button.addEventListener("click", function () {
         resetGame();
     });
-    
-    function timerCountDownCountdown() {
-        let seconds = 30;
-      
-        function timerCountDown() {
-            let seconds = 30;
-          if (secondseconds > 0) {
-            console.log(seconds + " seconds remaining");
-            seconds--;
-            setTimeout(updateCountdown, 1000);
-          } else {
-            console.log("Time's up!");
-          }
-          
-          
-    function filpCard(dogCard){
-    cards.classList.add("flipped");
-    flippedCards.push(dogCard);
-    if (flippedCards.length === 2) {
-        if(checkMatching()) {
-            handleMatch();
-        } else {
-            setTimeout(resetFlippedCards, 1000);
+
+    // Timer function
+    function startTimer() {
+        timerInterval = setInterval(function () {
+            if (secondsRemaining > 0) {
+                secondsRemaining--;
+                timer.textContent = secondsRemaining;
+            } else {
+                clearInterval(timerInterval);
+                endGame();
+            }
+        }, 1000);
+    }
+
+    // Flip a card
+    function flipCard(card) {
+        card.classList.add("flipped");
+        flippedCards.push(card);
+
+        if (flippedCards.length === 2) {
+            if (checkMatching()) {
+                handleMatch();
+            } else {
+                setTimeout(() => {
+                    resetFlippedCards();
+                }, 1000);
+            }
         }
     }
-}
-   startTimer();
 
-   const shuffleCards = Array.from(cards);
-   shuffleArray(shuffledCards);
-
-
-
+    // Start the game
+    startTimer();
+    const shuffledCards = Array.from(cards);
+    shuffleArray(shuffledCards);
+});
 
 
 
-    //function timerCountDown() {
-      //let seconds = 30;
-      //if (secondseconds > 0) {
-        //console.log(seconds + " seconds remaining");
-        //seconds--;
-       // setTimeout(updateCountdown, 1000);
-      //} else {
-        //console.log("Time's up!");
-      //}
-// Handle a matched pair of cards
-//function handleMatch() {
-   // const [card1, card2] = flippedCards;
-    //if (card1.dataset.card === card2.dataset.card) {
-        //card1.classList.add("matched");
-        //card2.classList.add("matched");
-
-        //flippedCards[];
-       // matchedPairs++;
-    //if (matchedPairs === cards.length / 2) {
-       // endGame();
-   // }
-   //wrongMessage.style.display = "block";
-       // setTimeout(() => {
-       // card1.classList.remove("flipped");
-       // card2.classList.remove("flipped");
-       // flippedCards = [];
-       // wrongMessage.style.display = "none";
-    //}, 1000);
-//}
-
- //function checkMatching() {
-   // const [card1, card2] = flippedCards;
-   // const card1Value = card1.dataset.card;
-   // const card2Value = card2.dataset.card;
-   // return card1Value === card2Value;// intergrate into flip card function
-//}
-// Reset flipped cards if they don't match//
- //function resetFlippedCards() {
-   // flippedCards.forEach(card => card.classList.remove("flipped"));
-    //flippedCards = [];
-
-   // resetFlippedCards();// intergrate into flip card fucntion
-//}
 
 
-//addEventListener//
-//document.addEventListener("DOMContentLoaded", function() {
 
-   // cards.forEach(function (card) {
-       // card.addEventListener("click", function() {
-           // if (!card.classList.contains("flipped") && flippedCards.length <2) {
-               // filpCard(card);
-           // }
-        
-//resetButton.addEventListener("click", function () {
-    //resetGame();
-//});
+
+
+
+
+
+
+
+
+
+
+
+
+
