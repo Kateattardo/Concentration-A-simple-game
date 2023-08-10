@@ -3,7 +3,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const cards = document.querySelectorAll(".dogcard");
     const timer = document.getElementById("timer");
-    const button = document.querySelector("button");
+    const button = document.querySelector("play-again-button");
     const wrongMessage = document.getElementById("wrong-message");
 
     let flippedCards = [];
@@ -18,12 +18,15 @@ document.addEventListener("DOMContentLoaded", function () {
             [cards[i], cards[j]] = [cards[j], cards[i]];
         }
     }
+    console.log(shuffleArray)
 
     // Reset flipped cards if no match
     function resetFlippedCards() {
         flippedCards.forEach(card => card.classList.remove("flipped"));
         flippedCards = [];
     }
+    console.log(resetFlippedCards)
+    
 
     // Check if the flipped cards match
     function checkMatching() {
@@ -32,6 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const card2Value = card2.dataset.card;
         return card1Value === card2Value;
     }
+    console.log(checkMatching)
 
     // Matched cards
     function handleMatch() {
@@ -44,11 +48,11 @@ document.addEventListener("DOMContentLoaded", function () {
             endGame();
         }
     }
+    console.log(handleMatch)
 
     // End
     function endGame() {
         clearInterval(timerInterval);
-        // Display victory message or perform any other game-over actions
     }
 
     // Reset 
@@ -66,6 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         startTimer();
     }
+    console.log(resetGame)
 
     // Add click event listeners to cards
     cards.forEach(function (card) {
@@ -77,8 +82,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Add click event listener to reset button
-    button.addEventListener("click", function () {
-        resetGame();
+    button.addEventListener("click", function (button) {
+        resetGame(button);
     });
 
     // Timer function
@@ -93,6 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }, 1000);
     }
+    console.log(startTimer)
 
     // Flip a card
     function flipCard(card) {
@@ -109,6 +115,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
     }
+    console.log(flipCard)
 
     // Start the game
     startTimer();
