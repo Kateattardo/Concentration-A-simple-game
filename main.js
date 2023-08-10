@@ -2,7 +2,7 @@
 
     const cards = document.querySelectorAll(".dogcard");
     const timer = document.getElementById("timer");
-    const button = document.querySelector("play-again-button");
+    const button = document.querySelector("#play-again-button");
     const wrongMessage = document.getElementById("wrong-message");
 
     let gameStarted = false;
@@ -39,7 +39,7 @@
         const card2Value = card2.dataset.card;
         return card1Value === card2Value;
     }
-    console.log(checkMatching());
+    console.log("checkCards");
     
     // Matched cards
     function handleMatch() {
@@ -69,10 +69,10 @@
             }
         }, 1000);
     }
-    console.log(startTimer());
+    console.log("countDown");
 
-    function lockBoard() {
-        lockBoard = false;
+    function lockTheBoard() {
+        lockBoard = true;
     }
     
     // Reset 
@@ -90,14 +90,14 @@
     });
     startTimer();
 }
-console.log(resetGame());
+console.log("newGame");
 
     // Reset flipped cards if no match
     function resetFlippedCards() {
         flippedCards.forEach(card => card.classList.remove("flipped"));
         flippedCards = [];
     }
-    console.log(resetFlippedCards());
+    console.log("reset"));
 
     //Start game
     function startGame() {
@@ -108,11 +108,6 @@ console.log(resetGame());
         startTimer();
     const shuffledCards = Array.from(cards);
     shuffleArray(shuffledCards);
-
-    // End
-    function endGame() {
-        clearInterval(timerInterval);
-        console.log("Game over!");
     }
 
 // Shuffle cards "Fisher-Yates"
@@ -121,17 +116,26 @@ console.log(resetGame());
             const j = Math.floor(Math.random() * (i + 1));
             [cards[i], cards[j]] = [cards[j], cards[i]];
         }
+        function shuffleAndRearrange() {
+            const shuffledCards = Array.from(cards);
+            shuffleArray(shuffledCards);
+            const cardContainer = cards[0].parentNode;
+            shuffledCards.forEach(card => {
+                cardContainer.appendChild(card);
+            });
+        }
     }
-    console.log(shuffleArray)
+    console.log("dogcards")
 
 
 
         //Event listeners
-    document.addEventListener("DOMContentLoaded", function () {
-        const cards = document.querySelectorAll(".dogcard");
+ 
+        const cards = document.querySelectorAll("dogcard")
         cards.forEach(card => {
             card.addEventListener("click", startGame);
-        });
+        }
+
 
     // Add click event listeners to cards
     cards.forEach(function (card) {
@@ -140,12 +144,12 @@ console.log(resetGame());
                 flipCard(card);
             }
         });
-    });
+    })
 
     // Add click event listener to reset button
-    button.addEventListener("click", function (playAgainButton) {
-        resetGame(playAgainButton);
-        lockBoard(playAgainButton);
+    button.addEventListener("click", function () {
+        resetGame();
+        lockBoard();
     });
 
    
