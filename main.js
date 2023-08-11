@@ -10,6 +10,14 @@ let secondsRemaining = 120;
 let timerInterval;
 let lockedBoard = false;
 
+function startGame() {
+    if (gameStarted) return;
+
+    gameStarted = true;
+    shuffleAndRearrange();
+    startTimer();
+}
+
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -91,7 +99,7 @@ function resetGame() {
 function resetCards() {
     flippedCards.forEach(card => card.classList.remove("flipped"));
     flippedCards = [];
-    lockBoard = false;
+    lockedBoard = false;
 }
 
 // Event Listeners
@@ -110,13 +118,7 @@ button.addEventListener("click", () => {
     lockTheBoard();
 });
 
-function startGame() {
-    if (gameStarted) return;
 
-    gameStarted = true;
-    shuffleAndRearrange();
-    startTimer();
-}
 
 
 
