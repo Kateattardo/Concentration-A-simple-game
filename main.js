@@ -1,4 +1,4 @@
-const cards = document.querySelectorAll(".dogcard");
+/*const cards = document.querySelectorAll(".dogcard");
 const timer = document.getElementById("timer");
 const button = document.querySelector("#play-again-button");
 const wrongMessage = document.getElementById("wrong-message");
@@ -10,6 +10,10 @@ let matchedPairs = 0;
 let secondsRemaining = 120;
 let timerInterval;
 let lockedBoard = false;
+*/
+
+const cards = document.querySelectorAll(".dogcard");
+let flippedCards = [];
 
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -25,6 +29,13 @@ function shuffleAndRearrange() {
     shuffledCards.forEach(card => {
         cardContainer.appendChild(card);
     });
+}
+/*
+function startGame() {
+    if (gameStarted) return;
+    gameStarted = true;
+    shuffleAndRearrange();
+    startTimer();
 }
 
 
@@ -68,30 +79,7 @@ document.querySelector('.cards').addEventListener('click', function(event) {
 });
 
 
-function startGame() {
-    if (gameStarted) return;
-    gameStarted = true;
-    shuffleAndRearrange();
-    startTimer();
-}
-
-function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-}
-
-function shuffleAndRearrange() {
-    const shuffledCards = Array.from(cards);
-    shuffleArray(shuffledCards);
-    const cardContainer = cards[0].parentNode;
-    shuffledCards.forEach(card => {
-        cardContainer.appendChild(card);
-    });
-}
-
-function unlockTheBoard() {
+/*function unlockTheBoard() {
     lockedBoard = false;
 }
 
@@ -141,6 +129,7 @@ function resetCards(isWrongCardReset = true) {
   }
     flippedCards = [];
     
+    
    
 
 
@@ -161,9 +150,9 @@ document.querySelector(".board").addEventListener("click", function() {
 });
 
 
-button.addEventListener("click", () => {
+/*button.addEventListener("click", () => {
     resetGame();
     unlockTheBoard();
 });
 
-
+*/
