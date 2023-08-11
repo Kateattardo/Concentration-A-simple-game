@@ -28,7 +28,7 @@ function shuffleAndRearrange() {
 
 function flipCard(card) {
     if (lockedBoard || card.classList.contains("flipped")) return;
-
+    console.log (card)
     card.classList.add("flipped");
     flippedCards.push(card);
 
@@ -40,7 +40,9 @@ function flipCard(card) {
 
 function checkMatching() {
     const [card1, card2] = flippedCards;
-    return card1.dataset.card === card2.dataset.card;
+    const card1Value = card1.dataset.card;
+    const card2Value = card2.dataset.card;
+    return card1Value === card2Value;
 }
 
 function handleMatch() {
@@ -51,7 +53,10 @@ function handleMatch() {
 
     if (matchedPairs === cards.length / 2) {
         endGame();
-    }
+    } else {
+       console.log("reset")  
+        resetCards();
+        }
 }
 
 function startTimer() {
@@ -86,20 +91,15 @@ function resetGame() {
 function resetCards() {
     flippedCards.forEach(card => card.classList.remove("flipped"));
     flippedCards = [];
-}
-
-function startGame() {
-    if (gameStarted) return;
-
-    gameStarted = true;
-    shuffleAndRearrange();
-    startTimer();
+    lockBoard = false;
 }
 
 // Event Listeners
-cards.forEach(card => {
+cards.forEach(card => { 
+    console.log ("hello")
     card.addEventListener("click", () => {
         if (!card.classList.contains("flipped") && flippedCards.length < 2) {
+            console.log ("if flip")
             flipCard(card);
         }
     });
@@ -109,6 +109,14 @@ button.addEventListener("click", () => {
     resetGame();
     lockTheBoard();
 });
+
+function startGame() {
+    if (gameStarted) return;
+
+    gameStarted = true;
+    shuffleAndRearrange();
+    startTimer();
+}
 
 
 
