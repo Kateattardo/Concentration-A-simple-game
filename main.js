@@ -1,40 +1,16 @@
 // Variables
 const cards = document.querySelectorAll(".dogcard");
-const timerDisplay = document.getElementById("timer");
-    let flippedCards = [];
-    let secondsRemaining = 120;
-    let timerInterval;
+let flippedCards = [];
 
-// Event listener to handle card clicks
+// Event listener
 document.querySelector('.cards').addEventListener('click', function(event) {
     const card = event.target.closest('.dogcard');
     if (card && !card.classList.contains("flipped") && flippedCards.length < 2) {
         flipCard(card);
     }
 });
-// Shuffle the cards
-function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-}
 
-function shuffleAndRearrange() {
-    const shuffledCards = Array.from(cards);
-    shuffleArray(shuffledCards);
-    const cardContainer = cards[0].parentNode;
-    const parentContainer = cardContainer.parentNode;
-    parentContainer.removeChild(cardContainer);
-    shuffledCards.forEach(card => {
-        cardContainer.appendChild(card);
-    });
-    parentContainer.appendChild(cardContainer);
-}
-
-shuffleAndRearrange();
-
-// Flip card function
+// Flip card 
 function flipCard(card) {
     card.classList.add("flipped");
     flippedCards.push(card);
@@ -46,31 +22,19 @@ function flipCard(card) {
     }
 }
 
-// Reset cards 
+// Reset cards function 
 function resetCards() {
     flippedCards.forEach(card => card.classList.remove("flipped"));
     flippedCards = [];
 }
+    
+    (function shuffle() {
+        cards.forEach(card => {
+          let ramdomPos = Math.floor(Math.random() * 12);
+          card.style.order = ramdomPos;
+        });
+      })();
 
-function startTimer() {
-    timerInterval = setInterval(() => {
-        secondsRemaining--;
-        timerDisplay.textContent = formatTime(secondsRemaining);
-
-        if (secondsRemaining <= 0) {
-            clearInterval(timerInterval);
-            alert("Time's up!");
-        }
-    }, 1000);
-}
-
-function formatTime(seconds) {
-    const min = Math.floor(seconds / 60);
-    const sec = seconds % 60;
-    return `${min}:${sec < 10 ? '0' : ''}${sec}`;
-}
-
-startTimer()
 
 
 
