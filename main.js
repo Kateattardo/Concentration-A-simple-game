@@ -1,4 +1,4 @@
-/*const cards = document.querySelectorAll(".dogcard");
+const cards = document.querySelectorAll(".dogcard");
 const timer = document.getElementById("timer");
 const button = document.querySelector("#play-again-button");
 const wrongMessage = document.getElementById("wrong-message");
@@ -10,10 +10,7 @@ let matchedPairs = 0;
 let secondsRemaining = 120;
 let timerInterval;
 let lockedBoard = false;
-*/
 
-const cards = document.querySelectorAll(".dogcard");
-let flippedCards = [];
 
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -30,7 +27,7 @@ function shuffleAndRearrange() {
         cardContainer.appendChild(card);
     });
 }
-/*
+
 function startGame() {
     if (gameStarted) return;
     gameStarted = true;
@@ -71,15 +68,7 @@ function resetCards() {
     flippedCards = [];
 }
 
-document.querySelector('.cards').addEventListener('click', function(event) {
-    const card = event.target.closest('.dogcard');
-    if (card && !card.classList.contains("flipped") && flippedCards.length < 2) {
-        flipCard(card);
-    }
-});
-
-
-/*function unlockTheBoard() {
+function unlockTheBoard() {
     lockedBoard = false;
 }
 
@@ -150,9 +139,8 @@ document.querySelector(".board").addEventListener("click", function() {
 });
 
 
-/*button.addEventListener("click", () => {
+button.addEventListener("click", () => {
     resetGame();
     unlockTheBoard();
 });
 
-*/
