@@ -1,93 +1,64 @@
 // Variables
-const cards = document.querySelectorAll(".dogcard");
 const timer = document.getElementById("timer");
+const cards = document.querySelectorAll(".dogcard");
 let flippedCards = [];
-let secondsRemaining = 120;
-let timerInterval;
 
-function startTimer() {
-    console.log("times up")
-    timerInterval = setInterval(() => {
-        secondsRemaining--;
-        timerDisplay.textContent = formatTime(secondsRemaining);
 
-        if (secondsRemaining <= 0) {
-            clearInterval(timerInterval);
-            alert("Time's up!");
-        }
-    }, 1000);
-}
-function formatTime(seconds) {
-    const min = Math.floor(seconds / 60);
-    const sec = seconds % 60;
-    return `${min}:${sec < 10 ? '0' : ''}${sec}`;
-}
-
-startTimer();
-
-// Event listener
+// Event listeners
 document.querySelector('.cards').addEventListener('click', function(event) {
     const card = event.target.closest('.dogcard');
     if (card && !card.classList.contains("flipped") && flippedCards.length < 2) {
         flipCard(card);
     }
 });
-
-// Flip card 
+//Card Flip
 function flipCard(card) {
-    card.classList.add("flipped");
+    card.classList.add('flipped');
     flippedCards.push(card);
 
     if (flippedCards.length === 2) {
-           setTimeout(() => {
-            resetCards();
-        }, 1000);
-    } else {
-        // Cards matched! 
-        handleMatch();
+        // For now, let's just reset after a short delay
+        setTimeout(resetCards, 1000);
     }
 }
-function handleMatch() {
-    // Add a "matched" class to both cards
-    flippedCards[0].classList.add("matched");
-    flippedCards[1].classList.add("matched");
-
-    // Clear the flippedCards array
-    flippedCards = [];
-}
-
-// Reset cards function 
+//Reset and Shuffle
 function resetCards() {
-    flippedCards.forEach(card => card.classList.remove("flipped"));
+    flippedCards.forEach(card => card.classList.remove('flipped'));
     flippedCards = [];
 }
+
+(function shuffle() {
+    cards.forEach(card => {
+      let ramdomPos = Math.floor(Math.random() * 12);
+      card.style.order = ramdomPos;
+    });
+  })();
+
+let secondsRemaining = 120;
+let timerInterval;
+
+function startTimer() {
+    timerInterval = setInterval(() => {
+        if (secondsRemaining <= 0) {
+            clearInterval(timerInterval);
+            endGame(0);
+            return;
+        }
+        timer.textContent = secondsRemaining--;
+    }, 1000);
+}
+
+startTimer();
+
+
+
+
+       
+
+
+
+
     
-    (function shuffle() {
-        cards.forEach(card => {
-          let ramdomPos = Math.floor(Math.random() * 12);
-          card.style.order = ramdomPos;
-        });
-      })();
-    const timerDisplay = document.getElementById('timer');
-    function startTimer() {
-        timerInterval = setInterval(() => {
-            secondsRemaining--;
-            timerDisplay.textContent = formatTime(secondsRemaining);
-
-            if (secondsRemaining <= 0) {
-                clearInterval(timerInterval);
-                alert("Time's up!");
-            }
-        }, 1000);
-    }
-
-    function formatTime(seconds) {
-        const min = Math.floor(seconds / 60);
-        const sec = seconds % 60;
-        return `${min}:${sec < 10 ? '0' : ''}${sec}`;
-    }
-
-    startTimer();
 
 
 
