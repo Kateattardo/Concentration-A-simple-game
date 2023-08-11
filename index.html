@@ -1,96 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<title>Concentration</title>
-<link rel="stylesheet" href="main.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@700&family=Poiret+One&display=swap" rel="stylesheet">
+    <title>Concentration</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@700&family=Poiret+One&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 </head>
 
 <body>
-<header>Concentration Doggy Style</header>
-<div class="board"> 
-    <div class="timer" id="timer">120</div>
-    <div class="message" id ="wrong-message">Wrong cards!</div>
-    <div class="cards">
-    <div class="dogcard" data-card="a1">
-        <div class="front">
-            <img src="./images/cards/IMG_Augie.JPG">
-        <div class="back">
-            <img src="./images/cards/IMG_back.jpg">
+    <header>Concentration Doggy Style</header>
+    <div class="board">
+        <div class="timer" id="timer">120</div>
+        <div class="message" id="wrong-message">Wrong cards!</div>
+        <div class="cards">
+            <!-- Card a1 -->
+            <div class="dogcard" data-card="a1">
+                <div class="back">
+                    <img src="./images/cards/IMG_Augie.JPG">
+                </div>
+                <div class="front">
+                    <img src="./images/cards/IMG_back.jpg">
+                </div>
+            </div>
+            <!-- Card a2 -->
+            <div class="dogcard" data-card="a2">
+                <div class="back">
+                    <img src="./images/cards/IMG_Augie.JPG">
+                </div>
+                <div class="front">
+                    <img src="./images/cards/IMG_back.jpg">
+                </div>
+            </div>
+            <div class="dogcard" data-card="b1">
+                <div class="back">
+                    <img src="./images/cards/IMG_Augie.JPG">
+                </div>
+                <div class="front">
+                    <img src="./images/cards/IMG_back.jpg">
+                </div>
+            </div>
+            <div class="dogcard" data-card="b2">
+                <div class="back">
+                    <img src="./images/cards/IMG_Augie.JPG">
+                </div>
+                <div class="front">
+                    <img src="./images/cards/IMG_back.jpg">
+                </div>
+            </div>
+            <div class="dogcard" data-card="c1">
+                <div class="back">
+                    <img src="./images/cards/IMG_Augie.JPG">
+                </div>
+                <div class="front">
+                    <img src="./images/cards/IMG_back.jpg">
+                </div>
+            </div>
+            <div class="dogcard" data-card="c2">
+                <div class="back">
+                    <img src="./images/cards/IMG_Augie.JPG">
+                </div>
+                <div class="front">
+                    <img src="./images/cards/IMG_back.jpg">
+                </div>
+            </div>
+            <div class="dogcard" data-card="d1">
+                <div class="back">
+                    <img src="./images/cards/IMG_Augie.JPG">
+                </div>
+                <div class="front">
+                    <img src="./images/cards/IMG_back.jpg">
+                </div>
+            </div>
+            <div class="dogcard" data-card="d2">
+                <div class="back">
+                    <img src="./images/cards/IMG_Augie.JPG">
+                </div>
+                <div class="front">
+                    <img src="./images/cards/IMG_back.jpg">
+                </div>
+            </div>
+            <div class="dogcard" data-card="e1">
+                <div class="back">
+                    <img src="./images/cards/IMG_Daffodil.jpg">
+                </div>
+                <div class="front">
+                    <img src="./images/cards/IMG_back.jpg">
+                </div>
+            </div>
+            <div class="dogcard" data-card="e2">
+                <div class="back">
+                    <img src="./images/cards/IMG_Augie.JPG">
+                </div>
+                <div class="front">
+                    <img src="./images/cards/IMG_back.jpg">
+                </div>
+            </div>
+            <div class="dogcard" data-card="f1">
+                <div class="back">
+                    <img src="./images/cards/IMG_Augie.JPG">
+                </div>
+                <div class="front">
+                    <img src="./images/cards/IMG_back.jpg">
+                </div>
+            </div>
+            <div class="dogcard" data-card="f2">
+                <div class="back">
+                    <img src="./images/cards/IMG_Augie.JPG">
+                </div>
+                <div class="front">
+                    <img src="./images/cards/IMG_back.jpg">
+                </div>
+            </div>
+        </div>
+        <button id="play-again-button">Play Again</button>
+        <script src="main.js"></script>
     </div>
-    <div class="dogcard" data-card="a2">
-        <div class="front">
-        <img src="./images/cards/IMG_Augie.JPG">
-        <div class="back">
-            <img src="./images/cards/IMG_back.jpg">
-    </div>
-    <div class="dogcard" data-card="b1">
-        <div class="front">
-            <img src="./images/cards/IMG_DJ.jpeg">
-        <div class="back">
-            <img src="./images/cards/IMG_back.jpg">
-    </div>
-    <div class="dogcard" data-card="b2">
-        <div class="front">
-            <img src="./images/cards/IMG_DJ.jpeg">
-        <div class="back">
-            <img src="./images/cards/IMG_back.jpg">
-    </div>
-    <div class="dogcard" data-card="c1">
-        <div class="front">
-            <img src="./images/cards/IMG_Newman.jpeg">
-        <div class="back">
-            <img src="./images/cards/IMG_back.jpg">
-    </div>
-    <div class="dogcard" data-card="c2">
-        <div class="front">
-            <img src="./images/cards/IMG_Newman.jpeg">
-        <div class="back">
-            <img src="./images/cards/IMG_back.jpg">
-    </div>
-    <div class="dogcard" data-card="d1">
-        <div class="front">
-            <img src="./images/cards/IMG_Ziggy.jpeg">
-        <div class="back">
-            <img src="./images/cards/IMG_back.jpg">
-    </div>
-    <div class="dogcard" data-card="d2">
-        <div class="front">
-            <img src="./images/cards/IMG_Ziggy.jpeg">
-        <div class="back">
-            <img src="./images/cards/IMG_back.jpg">
-    </div>
-    <div class="dogcard" data-card="e1">
-        <div class="front">
-            <img src="./images/cards/IMG_Daffodil.jpg">
-        <div class="back">
-            <img src="./images/cards/IMG_back.jpg">
-    </div>
-    <div class="dogcard" data-card="e2">
-        <div class="front>
-            <img src="./images/cards/IMG_Daffodil.jpg">
-        <div class="back">
-            <img src="./images/cards/IMG_back.jpg">
-    </div>
-    <div class="dogcard" data-card="f1">
-        <div class="front">
-            <img src="./images/cards/IMG_Romy.jpg">
-        <div class="back">
-            <img src="/images/cards/IMG_back.jpg">
-    </div>
-    <div class="dogcard" data-card="f2">
-        <div class="front">
-            <img src="./images/cards/IMG_Romy.jpg">
-        <div class="back">
-            <img src="/images/cards/IMG_back.jpg">
-    </div> 
-</div>
-<button id="play-again-button">Play Again</button>
-<script src="main.js"></script>   
 </body>
+
 </html>
