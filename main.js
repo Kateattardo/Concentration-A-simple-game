@@ -1,6 +1,29 @@
 // Variables
 const cards = document.querySelectorAll(".dogcard");
+const timer = document.getElementById("timer");
 let flippedCards = [];
+let secondsRemaining = 120;
+let timerInterval;
+
+function startTimer() {
+    console.log("times up")
+    timerInterval = setInterval(() => {
+        secondsRemaining--;
+        timerDisplay.textContent = formatTime(secondsRemaining);
+
+        if (secondsRemaining <= 0) {
+            clearInterval(timerInterval);
+            alert("Time's up!");
+        }
+    }, 1000);
+}
+function formatTime(seconds) {
+    const min = Math.floor(seconds / 60);
+    const sec = seconds % 60;
+    return `${min}:${sec < 10 ? '0' : ''}${sec}`;
+}
+
+startTimer();
 
 // Event listener
 document.querySelector('.cards').addEventListener('click', function(event) {
@@ -16,10 +39,21 @@ function flipCard(card) {
     flippedCards.push(card);
 
     if (flippedCards.length === 2) {
-        setTimeout(() => {
+           setTimeout(() => {
             resetCards();
         }, 1000);
+    } else {
+        // Cards matched! 
+        handleMatch();
     }
+}
+function handleMatch() {
+    // Add a "matched" class to both cards
+    flippedCards[0].classList.add("matched");
+    flippedCards[1].classList.add("matched");
+
+    // Clear the flippedCards array
+    flippedCards = [];
 }
 
 // Reset cards function 
@@ -34,6 +68,26 @@ function resetCards() {
           card.style.order = ramdomPos;
         });
       })();
+    const timerDisplay = document.getElementById('timer');
+    function startTimer() {
+        timerInterval = setInterval(() => {
+            secondsRemaining--;
+            timerDisplay.textContent = formatTime(secondsRemaining);
+
+            if (secondsRemaining <= 0) {
+                clearInterval(timerInterval);
+                alert("Time's up!");
+            }
+        }, 1000);
+    }
+
+    function formatTime(seconds) {
+        const min = Math.floor(seconds / 60);
+        const sec = seconds % 60;
+        return `${min}:${sec < 10 ? '0' : ''}${sec}`;
+    }
+
+    startTimer();
 
 
 
