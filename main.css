@@ -1,70 +1,92 @@
 body {
-margin: 0;
-padding: 0;
-font-family: 'Edu SA Beginner', cursive;  
-text-align: center;
-background: lightgoldenrodyellow;
+  margin: 0;
+  padding: 0;
+  font-family: 'Edu SA Beginner', cursive;  
+  text-align: center;
+  background: lightgoldenrodyellow;
 }
 
-    .cards {
-      display: flex;
-      flex-wrap: wrap;
-      width: 519px;
-      height: 50%;
-      margin: auto;
-      justify-content: center;
-      font-size: 48px;
-      cursor: pointer;
-      background: lightgoldenrodyellow;
-  }
-  .dogcard {
-    padding: 2px 2px;
-    position: relative;
-    }
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  width: 519px;
+  margin: auto;
+  justify-content: center;
+  background: lightgoldenrodyellow;
+}
 
-  .front, .back {
-    backface-visibility: visible;
-    transform-style: preserve-3d;
-  }
+.dogcard {
+  padding: 2px 2px;
+  position: relative;
+  width: 104px; 
+  height: 154px; 
+  perspective: 1000px; 
+  transform-style: preserve-3d; 
+}
 
-  .front{
-    transform: rotateY(0deg);
-  }
+.front, .back {
+  backface-visibility: hidden;  
+  transform-style: preserve-3d;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s;
+}
 
-  .back{
-    background-color: #f0f0f0;
-    transform: rotateY(180deg);
-    transform-origin: center center;
-  }
+.front {
+  transform: rotateY(0deg);
+  z-index: 2;
+}
 
-  .timer {
-    font-size: 2em;
-    color:forestgreen;
-    padding: 5%;
-  }
+.back {
+  background-color: #f0f0f0;
+  transform: rotateY(180deg);
+}
 
-  img {
-    display: grid;
-    height: 150px;
-    width: 100px;
-   }
+.dogcard.flipped .front {
+  transform: rotateY(-180deg);
+}
 
-  header {
-    background: lightgoldenrodyellow;
-    text-align: center;
-    margin-top: 0;
-    color:forestgreen;
-    font-size: 4vmin;
-    letter-spacing: 2vmin;
-  }
+.dogcard.flipped .back {
+  transform: rotateY(0deg);
+}
+
+.timer {
+  font-size: 2em;
+  color: forestgreen;
+  padding: 5%;
+}
+
+img {
+  display: grid;
+  height: 150px;
+  width: 100px;
+}
+
+header {
+  background: lightgoldenrodyellow;
+  text-align: center;
+  margin-top: 0;
+  color: forestgreen;
+  font-size: 4vmin;
+  letter-spacing: 2vmin;
+}
 
 button {
-  color:forestgreen;
-  border: 1vmin;
+  color: forestgreen;
+  border: 1vmin solid forestgreen;  
   border-radius: 2vmin;
   font-size: 2vmin;
   margin-top: 4vmin;
-  align-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s;  
+}
+
+button:hover {
+  background-color: forestgreen; 
+  color: lightgoldenrodyellow;
 }
 
 .message {
